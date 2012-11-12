@@ -8,15 +8,49 @@
 </head>
 <body>
   <% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path %> |
-  <%= link_to "Login", new_user_session_path %>
+    <header class="navbar navbar-fixed-top">
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/">Encouragster </a>
+          <ul class="nav">
+            <li><%= link_to 'New Task', new_task_path %></li>
+            <li><a href="#"> Kind Words</a></li>
+
+            <li class="dropdown">
+            <a class="dropdown-toggle" id="drop4" role="button" data-toggle="dropdown" href="#">Hi, <%=current_user.email%>
+                            <b class="caret"></b></a>
+              <ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop4">
+                <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+                <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+              </ul>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    </header>
+
+  <% else %>
+    <header class="navbar navbar-fixed-top">
+       <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="#">Encouragster </a>
+          <ul class="nav">
+            <li><%= link_to "Sign up", new_user_registration_path %></li>
+            <li><%= link_to "Login", new_user_session_path %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    </header>
 <% end %>
 
+<div class='container'>
 <%= yield %>
+</div>
 
 </body>
 </html>
