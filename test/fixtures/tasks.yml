@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  body: MyText
+  due: 2012-11-11 14:05:22
+  completed: 2012-11-11 14:05:22
+  user_id: 1
+
+two:
+  body: MyText
+  due: 2012-11-11 14:05:22
+  completed: 2012-11-11 14:05:22
+  user_id: 1
